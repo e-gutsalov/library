@@ -14,19 +14,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class BooksController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
-     */
-/*    public function index()
-    {
-        return $this->render( 'books/index.html.twig', [
-            'controller_name' => 'BooksController'
-        ] );
-    }
-*/
-    /**
      * @Route("/", name="display")
      */
-    public function display()
+    public function display(): string
     {
         $bk = $this->getDoctrine()
             ->getRepository( 'App:Book' )
@@ -39,7 +29,7 @@ class BooksController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function new(Request $request)
+    public function new(Request $request): string
     {
         $book = new Book();
         $form = $this->createFormBuilder($book)
@@ -72,7 +62,7 @@ class BooksController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function update(int $id, Request $request)
+    public function update(int $id, Request $request): string
     {
         $doct = $this->getDoctrine()->getManager();
         $bk = $doct->getRepository('App:Book')->find($id);
@@ -110,7 +100,7 @@ class BooksController extends AbstractController
      * @param int $id
      * @return RedirectResponse
      */
-    public function delete(int $id)
+    public function delete(int $id): string
     {
         $doct = $this->getDoctrine()->getManager();
         $bk = $doct->getRepository('App:Book')->find($id);
