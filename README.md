@@ -15,7 +15,7 @@ composer install
 Запуск веб сервера:
 php bin/console server:start
 или
-php bin/console server:start
+php bin/console server:run
 
 Режим отладки приложения:
 
