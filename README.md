@@ -5,6 +5,7 @@ PHP >= 7.4
 MySQL >=5.7
 
 Инициализация приложения
+
 Подготовка:
 cd projects/
 git clone ...
@@ -18,7 +19,6 @@ php bin/console server:start
 php bin/console server:run
 
 Режим отладки приложения:
-
 cd my_project_name/
 composer req debug --dev
 
