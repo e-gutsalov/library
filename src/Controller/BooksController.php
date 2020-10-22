@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Book;
+use phpDocumentor\Reflection\DocBlock\Tags\Reference\Reference;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -16,7 +17,7 @@ class BooksController extends AbstractController
     /**
      * @Route("/", name="display")
      */
-    public function display(): string
+    public function display(): object
     {
         $bk = $this->getDoctrine()
             ->getRepository( 'App:Book' )
@@ -29,7 +30,7 @@ class BooksController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function new(Request $request): string
+    public function new(Request $request): object
     {
         $book = new Book();
         $form = $this->createFormBuilder($book)
@@ -62,7 +63,7 @@ class BooksController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function update(int $id, Request $request): string
+    public function update(int $id, Request $request): object
     {
         $doct = $this->getDoctrine()->getManager();
         $bk = $doct->getRepository('App:Book')->find($id);
@@ -100,7 +101,7 @@ class BooksController extends AbstractController
      * @param int $id
      * @return RedirectResponse
      */
-    public function delete(int $id): string
+    public function delete(int $id): object
     {
         $doct = $this->getDoctrine()->getManager();
         $bk = $doct->getRepository('App:Book')->find($id);
