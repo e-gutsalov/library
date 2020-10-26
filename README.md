@@ -27,8 +27,6 @@ DATABASE_URL=mysql://db_user:db_password@localhost:3306/library?serverVersion=5.
 
 php bin/console doctrine:database:create
 
-php bin/console make:migration
-
 php bin/console doctrine:migrations:migrate
 
 Настройка завершена.
