@@ -29,7 +29,7 @@ class BooksController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function new(Request $request): object
+    public function new(Request $request): Response
     {
         $book = new Book();
         $form = $this->createFormBuilder($book)
@@ -62,7 +62,7 @@ class BooksController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function update(int $id, Request $request): object
+    public function update(int $id, Request $request): Response
     {
         $doct = $this->getDoctrine()->getManager();
         $bk = $doct->getRepository('App:Book')->find($id);
@@ -100,7 +100,7 @@ class BooksController extends AbstractController
      * @param int $id
      * @return RedirectResponse
      */
-    public function delete(int $id): object
+    public function delete(int $id): RedirectResponse
     {
         $doct = $this->getDoctrine()->getManager();
         $bk = $doct->getRepository('App:Book')->find($id);
