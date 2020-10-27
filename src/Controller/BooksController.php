@@ -16,7 +16,7 @@ class BooksController extends AbstractController
     /**
      * @Route("/", name="display")
      */
-    public function display(): object
+    public function display(): Response
     {
         $bk = $this->getDoctrine()
             ->getRepository( 'App:Book' )
