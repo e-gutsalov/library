@@ -3,9 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Book;
+use App\Form\BookFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,11 +17,11 @@ class BooksController extends AbstractController
      */
     public function display(): Response
     {
-        $bk = $this->getDoctrine()
-            ->getRepository( 'App:Book' )
+        $book = $this->getDoctrine()
+            ->getRepository( Book::class )
             ->findAll();
 
-        return $this->render( 'books/display.html.twig', [ 'data' => $bk ] );
+        return $this->render( 'books/display.html.twig', [ 'data' => $book ] );
     }
 
     /**
@@ -30,30 +29,24 @@ class BooksController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function new(Request $request): Response
+    public function new( Request $request ): Response
     {
         $book = new Book();
-        $form = $this->createFormBuilder($book)
-            ->add('name', TextType::class)
-            ->add('year', TextType::class)
-            ->add('author', TextType::class)
-            ->add('description', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'Submit'))
-            ->getForm();
+        $form = $this->createForm( BookFormType::class, $book);
+        $form->handleRequest( $request );
 
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ( $form->isSubmitted() && $form->isValid() ) {
             $book = $form->getData();
             $doct = $this->getDoctrine()->getManager();
-            $doct->persist($book);
+            $doct->persist( $book );
             $doct->flush();
 
-            return $this->redirectToRoute('display');
+            return $this->redirectToRoute( 'display' );
         } else {
-            return $this->render('books/new.html.twig', array(
+
+            return $this->render( 'books/new.html.twig', array(
                 'form' => $form->createView(),
-            ));
+            ) );
         }
     }
 
@@ -63,37 +56,32 @@ class BooksController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function update(int $id, Request $request): Response
+    public function update( int $id, Request $request ): Response
     {
         $doct = $this->getDoctrine()->getManager();
-        $bk = $doct->getRepository('App:Book')->find($id);
+        $book = $doct->getRepository( Book::class )->find( $id );
 
-        if (!$bk) {
+        if ( !$book ) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id ' . $id
             );
         }
-        $form = $this->createFormBuilder($bk)
-            ->add('name', TextType::class)
-            ->add('year', TextType::class)
-            ->add('author', TextType::class)
-            ->add('description', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'Submit'))
-            ->getForm();
 
-        $form->handleRequest($request);
+        $form = $this->createForm( BookFormType::class, $book);
+        $form->handleRequest( $request );
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ( $form->isSubmitted() && $form->isValid() ) {
             $book = $form->getData();
             $doct = $this->getDoctrine()->getManager();
-            $doct->persist($book);
+            $doct->persist( $book );
             $doct->flush();
 
-            return $this->redirectToRoute('display');
+            return $this->redirectToRoute( 'display' );
         } else {
-            return $this->render('books/new.html.twig', array(
+
+            return $this->render( 'books/new.html.twig', array(
                 'form' => $form->createView(),
-            ));
+            ) );
         }
     }
 
@@ -102,17 +90,17 @@ class BooksController extends AbstractController
      * @param int $id
      * @return RedirectResponse
      */
-    public function delete(int $id): RedirectResponse
+    public function delete( int $id ): RedirectResponse
     {
         $doct = $this->getDoctrine()->getManager();
-        $bk = $doct->getRepository('App:Book')->find($id);
+        $book = $doct->getRepository( Book::class )->find( $id );
 
-        if (!$bk) {
-            throw $this->createNotFoundException('No book found for id '.$id);
+        if ( !$book ) {
+            throw $this->createNotFoundException( 'No book found for id ' . $id );
         }
-        $doct->remove($bk);
+        $doct->remove( $book );
         $doct->flush();
 
-        return $this->redirectToRoute('display');
+        return $this->redirectToRoute( 'display' );
     }
 }
