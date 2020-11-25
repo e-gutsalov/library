@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96ec75f1-6487-473d-8f9d-f0a46fb16896" name="Default Changelist" comment="library - fixed">
-      <change afterPath="$PROJECT_DIR$/src/Form/BookFormType.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.php.lock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/var/cache/dev/App_KernelDevDebugContainer.php.meta" afterDir="false" />
@@ -8063,11 +8062,8 @@
       <change afterPath="$PROJECT_DIR$/vendor/webmozart/assert/psalm.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vendor/webmozart/assert/src/Assert.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vendor/webmozart/assert/src/Mixin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BooksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/books/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BookFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BookFormType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -8277,7 +8273,7 @@
       <workItem from="1603801283857" duration="1311000" />
       <workItem from="1603831898352" duration="354000" />
       <workItem from="1606241798715" duration="12200000" />
-      <workItem from="1606321660648" duration="2493000" />
+      <workItem from="1606321660648" duration="3645000" />
     </task>
     <task id="LOCAL-00001" summary="library">
       <created>1603308077368</created>
@@ -8321,7 +8317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606242886831</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="library-fixed-2">
+      <created>1606329167234</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606329167234</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -8338,7 +8341,8 @@
     <MESSAGE value="library - fixed-2" />
     <MESSAGE value="library - fixed-6" />
     <MESSAGE value="library - fixed - 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="library - fixed - 1" />
+    <MESSAGE value="library-fixed-2" />
+    <option name="LAST_COMMIT_MESSAGE" value="library-fixed-2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Composer" timestamp="1603272724616">
@@ -8357,10 +8361,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606252510984" />
-    <state x="501" y="35" width="917" height="962" key="CommitChangelistDialog2" timestamp="1606245759598">
+    <state x="501" y="35" width="917" height="962" key="CommitChangelistDialog2" timestamp="1606329049517">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="501" y="35" width="917" height="962" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606245759598" />
+    <state x="501" y="35" width="917" height="962" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606329049517" />
     <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1603312671933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -8377,10 +8381,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606253612769" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1606242899004">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1606329178113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606242899004" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606329178113" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1606321871951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
